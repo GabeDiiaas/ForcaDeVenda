@@ -48,5 +48,23 @@ class ProdutoAdapter(private val context: Context, private val produtos: Mutable
 
         val btnOption1 = dialogView.findViewById<Button>(R.id.btnOption1)
         val btnOption2 = dialogView.findViewById<Button>(R.id.btnOption2)
+
+
+        btnOption1.setOnClickListener {
+            Toast.makeText(context, "Opção 1", Toast.LENGTH_SHORT).show()
+        }
+
+        btnOption2.setOnClickListener {
+            Toast.makeText(context, "Opção 2", Toast.LENGTH_SHORT).show()
+        }
+
+
+        builder.setView(dialogView)
+            .setTitle("Detalhes do Produto")
+            .setPositiveButton("Fechar") { dialog, _ ->
+                dialog.dismiss() // Fecha o diálogo
+            }
+            .create()
+            .show()
     }
 }
